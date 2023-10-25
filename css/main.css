@@ -1,6 +1,7 @@
 @charset "UTF-8";
 * {
   font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
 
 header {
@@ -13,7 +14,7 @@ body {
   padding: 0;
 }
 
-.banner {
+header {
   display: flex;
   justify-content: space-between;
   background-color: yellow;
@@ -23,35 +24,44 @@ body {
   overflow-block: auto;
 }
 
-#right {
-  float: right;
-  font-size: medium;
-  margin-top: 0;
+.banner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  overflow-block: auto;
 }
 
-#center {
-  float: left;
-  font-size: 16px;
-  font-weight: normal;
-  margin-top: 0;
-  max-width: 307px;
-  margin-left: 0;
+#right, #center {
   padding: 0;
+  margin: 0 1rem 0 1rem;
+  font-size: small;
+  font-weight: 700;
 }
 
-.desktop-ONLY {
+#left {
   display: none;
 }
 
 @media (min-width: 768px) {
-  .desktop-ONLY {
-    display: block;
-    float: left;
+  #left, #right, #center {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  #left, #right, #center {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    font-size: medium;
+    font-weight: 700;
   }
 }
 h1 {
   float: left;
   font-size: 40px;
+  margin-left: 0.5rem;
 }
 
 .ksbtn {
@@ -63,13 +73,26 @@ h1 {
   float: right;
 }
 
+@media (min-width: 768px) {
+  .ksbtn {
+    display: none;
+  }
+}
 hr {
+  display: flex;
+  line-height: 40px;
+  width: 100%;
+  overflow-block: auto;
   border: 1px solid black; /* Tykkelse og farge på linjen */
-  min-width: 4000px;
-  margin-top: 10px; /* Avstand over linjen */
-  margin-bottom: 0px;
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
+@media (min-width: 768px) {
+  hr {
+    display: none;
+  }
+}
 .pdside {
   max-width: 90%; /* Maksimal bredde av bildet (slik at det aldri blir bredere enn containeren) */
   height: auto;
@@ -78,49 +101,71 @@ hr {
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  .pdsidedesktop {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .pdside {
+    display: none;
+  }
+}
 h2 {
   text-align: center;
 }
 
-.leftsko {
-  display: block; /* Vises som blokk på mobil */
-  width: 75%; /* Juster bredden etter behov */
-  margin: 1rem 2rem 3rem 2rem;
-}
-
-.leftsko img {
+.produkt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
 }
 
-.leftsko p {
-  text-align: center; /* Sentrer overskriftene */
+.produkt img {
+  width: 70%;
+}
+
+.produkt p {
+  text-align: left;
+  font-weight: 600;
   margin-bottom: 0.2rem;
 }
 
-.centersko, .rightsko {
-  display: none; /* Skjules på mobil */
+@media (min-width: 768px) {
+  .produkt {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    text-align: left;
+  }
+  .leftsko,
+  .centersko,
+  .rightsko {
+    text-align: left;
+  }
+  .leftsko img,
+  .centersko img,
+  .rightsko img {
+    width: 100%; /* Sikrer at bildene tilpasser seg forelderens bredde */
+    height: auto;
+  }
+}
+footer {
+  background-color: #acacac;
+  padding: 0;
+  margin: 0;
 }
 
-@media (min-width: 768px) {
-  .leftsko, .centersko, .rightsko {
-    display: inline-block; /* Vises side om side på desktop */
-    width: 30%; /* Juster bredden etter behov */
-  }
-  .rightsko {
-    float: right;
-  }
-  .centersko {
-    float: none;
-  }
-  .centersko img, .rightsko img {
-    width: 100%; /* Sikrer at bildene tilpasser seg forelderens bredde */
-  }
-  .centersko p, .rightsko p {
-    text-align: center; /* Sentrer overskriftene */
-    margin-bottom: 0.2rem; /* Fjern standard margintopp for <p>-elementer */
-  }
+h3 {
+  padding: 2rem;
+  padding-bottom: 0;
+  font-size: 20px;
 }
+
 #bottomtekst {
+  display: block;
+  padding: 2rem;
   margin: 0;
-  padding: 0;
 }/*# sourceMappingURL=main.css.map */
