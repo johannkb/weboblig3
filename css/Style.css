@@ -1,0 +1,112 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+    background-color: yellow;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    overflow-block: auto;
+}
+
+#right {
+    float: right;
+    font-size: medium;
+    margin-top: 0;
+}
+
+#center {
+    float: left;
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 0;
+    max-width: 307px;
+    margin-left: 0;
+    padding: 0;
+}
+
+.desktop-ONLY {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .desktop-ONLY {
+        display: block;
+        float: left;
+    }
+}
+
+h1 {
+    float: left;
+    font-size: 40px;
+}
+
+.ksbtn {
+    min-width: 50px;
+    min-height: 30px;
+    max-width: 90px;
+    max-height: 60px;
+    margin: 1rem 0.5rem 0 1rem;
+    float: right;
+}
+
+hr {
+    border: 1px solid black;
+    min-width: 4000px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.pdside {
+    max-width: 90%;
+    height: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0;
+}
+
+.leftsko {
+    display: block;
+}
+
+.leftsko,
+.centersko,
+.rightsko {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .leftsko,
+    .centersko,
+    .rightsko {
+        display: block;
+    }
+}
+
+
+    .leftsko img,
+    .centersko img,
+    .rightsko img {
+        width: 100%;
+    }
+
+    .leftsko p,
+    .centersko p,
+    .rightsko p {
+        text-align: center;
+        margin: 0;
+    }
+}
