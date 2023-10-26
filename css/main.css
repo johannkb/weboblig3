@@ -14,7 +14,7 @@ body {
 
 header {
   display: flex;
-  background-color: yellow;
+  background-color: #ffff00;
   height: 40px;
   line-height: 40px;
   width: 100%;
@@ -164,6 +164,52 @@ hr {
     display: none;
   }
 }
+#sommerskotekst {
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+.filterknapp {
+  display: grid;
+  grid-template-areas: ". filter fikon . best bikon .";
+  grid-template-columns: 3rem 100px 35px 2.5rem 100px 27px 3rem;
+  grid-template-rows: 40px;
+}
+
+.filter {
+  display: flex;
+  grid-area: filter;
+  justify-content: right;
+  margin: 0;
+  padding: 10px 1rem 10px 0;
+  background-color: yellow;
+}
+
+.fa-arrow-down-short-wide {
+  display: flex;
+  grid-area: fikon;
+  margin: 0;
+  padding: 10px 10px;
+  background-color: yellow;
+}
+
+.best {
+  display: flex;
+  grid-area: best;
+  justify-content: center;
+  margin: 0;
+  padding: 10px 10px;
+  background-color: yellow;
+}
+
+.fa-chevron-down {
+  display: flex;
+  grid-area: bikon;
+  margin: 0;
+  padding: 10px 10px;
+  background-color: yellow;
+}
+
 @media (max-width: 767px) {
   .pdside {
     display: flex;
