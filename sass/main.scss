@@ -1,112 +1,195 @@
+/*id er "#"
+class er "."
+padding/margin rekkefølge: top right bottom left*/
+
 *{
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
-header{
-   
-     padding: 0;
-     margin: 0;
-}
+
 
 body{
     margin: 0;
     padding:0;
 }
+
 header {
     display:flex;
-    justify-content: space-between;
     background-color: yellow;
     height: 40px;
     line-height: 40px;
     width: 100%;
-    overflow-block:auto;
-}
-
-.banner {
-    display:flex;
-    justify-content: space-between;
-    width: 100%;
-    overflow-block:auto;
-}
-
-#right, #center{
     padding: 0;
-    margin: 0 1rem 0 1rem;
-    font-size: small;
-    font-weight: 700;
+    margin: 0;
 }
 
-#left{
-    display: none;
-}
-@media (min-width: 768px){
-    #left, #right, #center{
-        display: none;
-    }
+
+
+.header-grid {
+    display: grid;
+    grid-template-columns: 230px 20px 30% 210px 20px 30% 210px 20px ;
+    grid-template-rows: 40px;
+    grid-template-areas: "left truck . center clock . right cart";
+    width: 3000px;
     
-}
 
-
-@media (min-width: 768px){
-    #left, #right, #center{
+    #center {
         display: flex;
-        flex-direction: row;
-        gap: 20px;
-        padding: 0;
+        justify-content: center;
+        grid-area: center;
+        padding-bottom: 18px;
+        padding-top: 0;
+        padding-left: 0.1rem;
+        padding-right: 0;
         margin: 0;
-        font-size: medium;
-        font-weight: 700;
+        
+    }
+
+    .fa-clock {
+        display: flex;
+        justify-content: center;
+        grid-area: clock;
+        font-size: 24px;
+        margin: 0;
+        padding: 0.5rem 0 0.5rem 0.2rem;
+    }
+
+    #right {
+        grid-area: right;
+        padding-bottom: 18px;
+        padding-top: 0;
+        padding-left: 1rem;
+        margin: 0;
+    }
+
+    .fa-cart-shopping {
+        display: flex;
+        justify-content: right;
+        grid-area: cart;
+        font-size: 24px;
+        margin: 0;
+        padding: 0.5rem 0.3rem 0.5rem 0.2rem;
+    }
+
+    #left {
+        display: flex;
+        justify-content: left;
+        grid-area: left;
+        padding-bottom: 18px;
+        padding-top: 0;
+        padding-left: 1rem;
+        margin: 0;
+        
+    }
+
+    .fa-truck {
+        display: flex;
+        justify-content: left;
+        grid-area: truck;
+        font-size: 24px;
+        margin: 0;
+        padding: 0.5rem 0 0.5rem 0.2rem;
+    }
+
+    @media (max-width: 768px) {
+        #left, .fa-truck {
+            display: none;
+        }
+        #right, #center{
+            font-size: 13px;
+        }
+       
+        grid-template-columns: 170px 20px auto 170px 10px;
+        grid-template-areas: "center clock . right cart";
     }
 }
-h1{
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: 50% 1fr 80px 80px;
+    grid-template-rows: 40px 20px;
+    grid-template-areas: "logo . menneske magnum"
+                        ".  . login sok";
     
-    float: left;
-    font-size: 40px;
-    margin-left: 0.5rem;
-}
-.ksbtn{
-    min-width: 50px;
-    min-height: 30px;
-    max-width: 90px;
-    max-height: 60px;
-    margin: 1rem 0.5rem 0 1rem;
-    float: right;
+        .hovedlogo {
+        grid-area: logo;
+        display: inline-block;
+        justify-content: left;
+        margin: 1.2rem 0 1rem 0.5rem;
+        padding: 0;
+        font-weight: 700;
+        text-decoration: none;
+        color: black; 
+        font-style: italic; 
+    }
+                          
+    @media (max-width: 768px){
+        .hovedlogo{
+            font-size: 26px;
+            
+        }
+    }
+    @media (min-width:768px){
+        .hovedlogo{
+            font-size: 48px;
+            
+        }
+    }
+    
+    .fa-user{
+        grid-area: menneske;
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+        padding: 1rem 0 0.1rem 2.5rem;
+        margin: 0;
 
-}
-@media (min-width: 768px){
-    .ksbtn{
-        display: none;
+    }
+    #login{
+        grid-area: login;
+        display: flex;
+        justify-content: center;
+        padding: 0.1rem 0 1.5rem 2.5rem;
+        margin:0;
+    }
+    .fa-magnifying-glass{
+        grid-area: magnum;
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+        padding: 1rem 0 0.1rem 0;
+    }
+    #sokk{
+        grid-area: sok;
+        display: flex;
+        justify-content: center;
+        padding: 0.1rem 0 1.5rem 0;
+        margin:0;
     }
 }
-
-
-
-
+  
 hr{
     display:flex;
     line-height: 40px;
     width: 100%;
     overflow-block:auto;
-    border: 1px solid black; /* Tykkelse og farge på linjen */
+    border: 1px solid rgb(107, 107, 107); 
     margin-top: 10px;
     margin-bottom: 0;
 }
-
-@media (min-width: 768px){
+@media (min-width: 767px){
     hr{
         display: none;
     }
 }
-
-
-.pdside {
-    max-width: 90%; /* Maksimal bredde av bildet (slik at det aldri blir bredere enn containeren) */
-    height: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin: 0;
+@media (max-width: 767px){
+    .pdside{
+        display: flex;
+        justify-items: center;
+        width: 100%;
+        padding-left: 2rem;
+        padding-right: 2rem;
 }
-@media (max-width: 768px){
     .pdsidedesktop{
         display: none;
     }
@@ -116,63 +199,142 @@ hr{
     .pdside{
         display: none;
     }
+    .pdsidedesktop{
+        display: flex;
+        justify-content: center;
+        width: 70%;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
 }
-
 h2{
-    text-align: center;
-}
-
-.produkt {
-    display:flex;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
+    padding: 1rem 0 0 0;
+    margin: 0;
 }
-.produkt img{
-    width: 70%;
+@media (max-width: 767px){
+    .centersko, .rightsko{
+        display: none;
+    }
+    .leftsko{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 0 3rem 0 3rem;
+        color: black; 
+    }
+    .leftsko p{
+        display: inline-block;
+        padding: 1rem 0 0.5rem 0;
+        margin: 0;
+        
+    }
 }
-.produkt p{
+
+@media (min-width:768px){
+    .leftsko{
+        display: none;
+    }
+.produkt{
+    display: grid;
+    grid-template-areas: "leftsko centersko rightsko";
+    grid-template-columns: repeat(3, 1fr);
+    gap:15px;
     text-align: left;
-    font-weight: 600;
-    margin-bottom: 0.2rem;
+    width: 70%;
+
+    #leftsko img{
+        grid-area: leftsko;
+        display: flex;
+        width: 100%;
+    }
+}
 }
 
-@media (min-width: 768px) {
-    .produkt {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 20px;
-        text-align: left;
-      }
-      
-      .leftsko,
-      .centersko,
-      .rightsko {
-        text-align: left;
-      }
-      
-      .leftsko img,
-      .centersko img,
-      .rightsko img {
-        width: 100%; /* Sikrer at bildene tilpasser seg forelderens bredde */
-        height: auto;
-      }
-}
-
-footer{
+.links{
+    display: grid;
+    grid-template-areas:"h3 ."
+                        "facebook fbikon"
+                        "instagram igikon"
+                        "kundeservice ."
+                        "presse .";
+    grid-template-columns:200px 20%;
+    grid-template-rows: repeat(6, 40px);
+    font-size: 24px;
     background-color: #acacac;
     padding: 0;
-    margin: 0;
+    margin: 1rem 0 0 0;
+
+    h3{
+        grid-area: h3;
+        display: flex;
+        padding: 0;
+        margin: 1rem 0 0 1rem;
+        justify-content: center;
+    }
+
+    .facebook::before, .instagram::before, .kundeservice::before, .presse::before{
+        content: "•";
+        margin-right: 0.5rem;
+        color:black;
+    }
+    .facebook{
+        grid-area: facebook;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        color: black;
+        margin-top: 1rem;
+    }
+    .fa-facebook{
+        grid-area: fbikon;
+        display: flex;
+        justify-content: left;
+        margin-top: 1rem;
+    }
+    .instagram{
+        grid-area: instagram;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        color: black;
+        margin-top: 1rem;
+    }
+    .fa-instagram{
+        grid-area: igikon;
+        display: flex;
+        margin-top: 1rem;
+    }
+    .kundeservice{
+        grid-area: kundeservice;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        color: black;
+        padding-left: 2.3rem;
+        margin-top: 1rem;
+    }
+    .presse{
+        grid-area: presse;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        color: black;
+        padding-right: 2.3rem;
+        margin-top: 1rem;
+
+    }
+    @media (min-width:768px){
+        .links{
+            display: flex;
+            justify-content: center;
+        }
+    }
 }
 
-h3{
-    padding: 2rem;
-    padding-bottom: 0;
-    font-size: 20px;
-}
-#bottomtekst{
-    display: block;
-    padding: 2rem;
-    margin: 0;
-}
+
+/*id er "#"
+class er "."
+padding/margin rekkefølge: top right bottom left*/

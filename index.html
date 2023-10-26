@@ -5,29 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forside</title>
     <link href="css/main.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/d84bb0414c.js" crossorigin="anonymous"></script> <!--fontawesome.com ikoner-->
+    <script src="https://kit.fontawesome.com/d84bb0414c.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <header>
-        <div class="banner">
+        <div class="header-grid">
             <p id="center">30 DAGERS ÅPENT KJØP</p>
+            <i class="fa-regular fa-clock"></i>
             <p id="right">FAST FRAKT PÅ 79KR</p>
+            <i class="fa-solid fa-cart-shopping"></i>
             <p id="left">HJEMLEVERING 3-7 DAGER</p>
+            <i class="fa-solid fa-truck"></i>
         </div>
     </header>
-    <main>
-        <h1>SKOFORDEG</h1>
-    <a href="kundeservice_valgfri.html">
-        <img class="ksbtn" src="img/kundeservice.png" alt="søke knapp">
+    <nav class="nav-grid">
+        <span >
+        <a class="hovedlogo" href="index.html">SKOFORDEG</a>
+        </span>
+        
+        <i class="fa-regular fa-user"></i>
+        <p id="login">LOGIN</p>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <p id="sokk">SØK</p>
+        <a href="kundeservice_valgfri.html">
     </a>
+    </nav>
+    <main>
+        
     <hr>
     <a href="produkt.html">
         <img class="pdside" src="img/Component_3.png" alt="hovedbildet">
-        <img class="pdsidedesktop" src="#" alt="hovedbildet for desktop">
+        <img class="pdsidedesktop" src="img/forside-desktop.png" alt="hovedbildet for desktop">
     </a>
     <h2>SE VÅRE BESTSELGERE</h2>
     
     <article class="produkt">
+        <a href="produkt.html">
         <div class="leftsko">
         <p>Joggesko 799,-</p>
         <img src="img/IMG_3384.jpg" alt="Joggesko bilde">
@@ -60,18 +74,18 @@
         <p>Joggesko 799,-</p>
         <img src="img/IMG_3384.jpg" alt="Joggesko bilde">
         </div>
-
+    </a>
     </article>
 
-    <footer id="links">
-        <h3>SKOFORDEG</h3>
-        <ul id="bottomtekst">
-            <li href="kundeservice_valgfri.html">Kundeservice</li>
-            <li href="#">Facebook</li>
-            <li href="#">Instagram</li>
-            <li href="kundeservice_valgfri.html">Presse</li>
-            
-        </ul>
+   
+    <footer class="links">
+            <h3>SKOFORDEG</h3>
+            <a href="#" class="facebook">Facebook</a>
+            <i class="fa-brands fa-facebook"></i>
+            <a href="#" class="instagram">Instagram</a>
+            <i class="fa-brands fa-instagram"></i>
+            <a href="kundeservice_valgfri.html" class="kundeservice">Kundeservice</a>
+            <a href="kundeservice_valgfri.html" class="presse">Presse</a>
     </footer>
     </main>
 </body>
