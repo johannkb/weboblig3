@@ -1,10 +1,13 @@
 /*id er "#"
 class er "."
 padding/margin rekkefølge: top right bottom left*/
+/* Dine eksisterende CSS-regler her */
+
 
 *{
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 
@@ -104,37 +107,38 @@ header {
     }
 }
 
-.nav-grid {
-    display: grid;
-    grid-template-columns: 50% 1fr 80px 80px;
-    grid-template-rows: 40px 20px;
-    grid-template-areas: "logo . menneske magnum"
-                        ".  . login sok";
-    
-        .hovedlogo {
-        grid-area: logo;
-        display: inline-block;
-        justify-content: left;
-        margin: 1.2rem 0 1rem 0.5rem;
-        padding: 0;
-        font-weight: 700;
-        text-decoration: none;
-        color: black; 
-        font-style: italic; 
+@media (min-width: 768px){
+
+        .fa-user, .fa-magnifying-glass, #login, #sokk, .hovedlogo{
+            display: none;
+        }
+        
+        
     }
-                          
     @media (max-width: 768px){
-        .hovedlogo{
+
+        .input, .navtekst{
+            display: none;
+        }
+        .nav-grid {
+            display: grid;
+            grid-template-columns: 50% 1fr 80px 80px;
+            grid-template-rows: 40px 20px;
+            grid-template-areas: "logo . menneske magnum"
+                                ".  . login sok";
+            
+        .hovedlogo {
+            grid-area: logo;
+            display: inline-block;
+            justify-content: left;
+            margin: 1.2rem 0 1rem 0.5rem;
+            padding: 0;
+            font-weight: 700;
+            text-decoration: none;
+            color: black; 
+            font-style: italic; 
             font-size: 26px;
-            
         }
-    }
-    @media (min-width:768px){
-        .hovedlogo{
-            font-size: 48px;
-            
-        }
-    }
     
     .fa-user{
         grid-area: menneske;
@@ -167,7 +171,77 @@ header {
         margin:0;
     }
 }
-  
+}
+@media (min-width: 768px){
+    .nav-grid{
+        display: grid;
+        grid-template-areas:". . . . . . . . ."
+                            ". logo . input iikon . bikon login ."
+                            ". ntekst . . . . . . .";
+        grid-template-columns: 1rem 300px auto 300px 40px auto 40px 150px 0px;
+        grid-template-rows: 40px 40px;
+    }
+    .hovedlogo{
+        grid-area: logo;
+        display: inline-block;
+        justify-content: left;
+        margin: 2rem 0 5rem 3rem;
+        padding: 0;
+        font-weight: 700;
+        text-decoration: none;
+        color: black; 
+        font-style: italic; 
+        font-size: 48px;
+    }
+    .input {
+        grid-area: input;
+        display: flex;
+        justify-content: left;
+        width: 300px; 
+        background: none;
+        margin:0;
+        padding:0;
+        font-size: 16px;
+    }
+    .fa-magnifying-glass{
+        grid-area: iikon;
+        display: flex;
+        font-size: 30px;
+        padding: 0.5rem;
+    }
+    .fa-user{
+        grid-area: bikon;
+        display: flex;
+        font-size: 30px;
+        justify-content: center;
+        padding: 0.5rem;
+    }
+    #login{
+        grid-area: login;
+        display: flex;
+        font-size: 30px;
+        justify-content: left;
+        padding: 0.5rem;
+        margin: 0;
+    }
+    .navtekst{
+        grid-area: ntekst;
+        font-size: 24px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 3rem 0 1rem 2.5rem;
+    }
+    .navtekst > span{
+        margin-right: 40px;
+        border-bottom: 2px solid #000; 
+        padding-bottom: 3px;
+    }
+    a {
+        text-decoration: none;
+        color: #000; 
+    }
+}
 hr{
     display:flex;
     line-height: 40px;
@@ -187,13 +261,13 @@ hr{
 
 #sommerskotekst{
     display: inline-block;
-    margin:0.5rem;
+    margin:1rem 2rem 1rem 2rem;
 }
 
 .filterknapp{
     display: grid;
     grid-template-areas: ". filter fikon . best bikon .";
-    grid-template-columns: 3rem 100px 35px 2.5rem 100px 27px 3rem;
+    grid-template-columns: auto 100px 35px 2.5rem 100px 27px auto;
     grid-template-rows: 40px;
 }
 .filter{
@@ -226,6 +300,7 @@ hr{
     padding: 10px 10px;
     background-color: yellow;
 }
+
 @media (max-width: 767px){
     .pdside{
         display: flex;
@@ -237,25 +312,27 @@ hr{
     .pdsidedesktop{
         display: none;
     }
+    
 }
-
 @media (min-width: 768px){
     .pdside{
         display: none;
     }
     .pdsidedesktop{
         display: flex;
-        justify-content: center;
-        width: 70%;
-        padding-left: 5rem;
-        padding-right: 5rem;
+        justify-items: center;
+        width: 100%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
     }
 }
-h2{
+h4{
     display: flex;
     justify-content: center;
     padding: 1rem 0 0 0;
     margin: 0;
+    font-size: 24px;
 }
 @media (max-width: 767px){
     .centersko, .rightsko{
@@ -268,33 +345,46 @@ h2{
         width: 100%;
         padding: 0 3rem 0 3rem;
         color: black; 
-    }
-    .leftsko p{
-        display: inline-block;
-        padding: 1rem 0 0.5rem 0;
-        margin: 0;
-        
+        text-decoration: none;
+        font-size: larger;
     }
 }
 
 @media (min-width:768px){
-    .leftsko{
+    h4{
         display: none;
     }
-.produkt{
-    display: grid;
-    grid-template-areas: "leftsko centersko rightsko";
-    grid-template-columns: repeat(3, 1fr);
-    gap:15px;
-    text-align: left;
-    width: 70%;
-
-    #leftsko img{
-        grid-area: leftsko;
-        display: flex;
-        width: 100%;
+    .produkt{
+        display: grid;
+        grid-template-areas:"leftsko centersko rightsko"
+                            "leftsko centersko rightsko"
+                            "leftsko centersko rightsko";
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(4, auto);
+        column-gap: 100px;
+        text-align: center;
+        width: 10%;
+        margin: 0;
+        padding: 1rem 2rem 1rem 2rem;
     }
-}
+    .leftsko{
+        display: flex;
+        justify-content: left;
+        grid-area: leftsko;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+    
+    .centersko{
+        display: flex;
+        grid-area: centersko;
+        flex-wrap: wrap;
+    }
+    .rightsko{
+        display: flex;
+        grid-area: rightsko;
+        flex-wrap: wrap;
+    }
 }
 
 
@@ -312,20 +402,25 @@ h2{
                         "p2 p2"
                         "p2 p2"
                         "p3 p3";
-                        grid-template-columns: minmax(min-content, auto) minmax(min-content, auto) ;
+                        grid-template-columns: minmax(min-content, 170px) minmax(min-content, auto) ;
                         grid-template-rows: repeat(11, minmax(max-content, auto)) ;
 }
 h2{
     grid-area: h2;
     display: flex;
     justify-content: left;
+    padding: 1rem 1rem 0 1rem;
+    margin: 0;
 }
 .top{
     grid-area: top;
     display: flex;
     justify-content: left;
+    padding: 1rem 1rem 0 1rem;
+    margin: 0;
 }
 .kundeknapp{
+    
     background-color: #D9D9D9;
     color: black;
     display: flex;
@@ -334,6 +429,8 @@ h2{
     margin: 0.5rem;
     font-size: 24px;
     justify-content: center;
+    max-width: 150px;
+    height: 40px;
 }
 .p1{
     grid-area: p1;
@@ -344,7 +441,7 @@ h2{
 .p2{
     grid-area: p2;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     padding: 0 1rem 0 1rem
 }
 .p3{
@@ -358,6 +455,77 @@ h2{
     font-style: italic;
 }
 }
+
+@media (min-width:769px){
+    .ksfree{
+        display: none;
+    }
+    .ksfree{
+        display: grid;
+        grid-template-areas:"h2 h2 h2 h2 h2 h2"
+                            "top top top top top top"
+                            "knapp knapp knapp knapp knapp knapp"
+                            "p1 p1 p1 p1 p1 p1"
+                            "p2 p2 p2 p2 p2 p2"
+                            "p3 p3 p3 p3 p3 p3";
+                            grid-template-columns: repeat(6, minmax(min-content, 200px)) ;
+                            grid-template-rows: repeat(6, minmax(max-content, auto)) ;
+    }
+    h2{
+        grid-area: h2;
+        display: flex;
+        justify-content: left;
+        padding: 1rem 1rem 0 1rem;
+        margin: 0;
+    }
+    .top{
+        grid-area: top;
+        display: flex;
+        justify-content: left;
+        padding: 1rem 1rem 0 1rem;
+        margin: 0;
+    }
+    .kundeknapp{
+        
+        background-color: #D9D9D9;
+        color: black;
+        display: flex;
+        padding: 0.5rem;
+        text-decoration: none;
+        margin: 0.5rem;
+        font-size: 30px;
+        justify-content: center;
+        max-width: 200px;
+        height: 50px;
+    }
+    .p1{
+        grid-area: p1;
+        display: flex;
+        justify-content: center;
+        padding: 0 1rem 0 1rem;
+        font-size: 30px;
+    }
+    .p2{
+        grid-area: p2;
+        display: flex;
+        justify-content: left;
+        padding: 0 1rem 0 1rem;
+        font-size: 30px;
+    }
+    .p3{
+        grid-area: p3;
+        display: flex;
+        padding: 0 1rem 0 1rem;
+        font-size: 30px;
+    }
+    #nr{
+        color: blue;
+        text-decoration: underline;
+        font-style: italic;
+        font-size: 30px;
+    }
+    }
+
 
 .links{
     display: grid;
