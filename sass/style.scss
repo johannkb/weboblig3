@@ -294,7 +294,11 @@ hr{
     padding: 10px 10px;
     background-color: yellow;
 }
-
+h4{
+    display: flex;
+    padding: 1rem 0 0 3rem;
+    margin: 0;
+}
 @media (max-width: 767px){
     .pdside{
         display: flex;
@@ -308,8 +312,10 @@ hr{
     }
     #sommerskotekst{
         font-size: 20px;
-    }h4{
+    }
+    h4{
         font-size: 26px;
+        justify-content: left;
     }
     
 }
@@ -330,14 +336,10 @@ hr{
     }
     h4{
         font-size: 40px;
+        justify-content: center;
     }
 }
-h4{
-    display: flex;
-    justify-content: left;
-    padding: 1rem 0 0 2rem;
-    margin: 0;
-}
+
 @media (max-width: 767px){
     .centersko, .rightsko{
         display: none;
